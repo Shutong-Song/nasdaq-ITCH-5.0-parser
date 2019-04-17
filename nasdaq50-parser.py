@@ -96,5 +96,4 @@ while message_type:
         parsed_data = net_order_imbalance_message(message);
         print(parsed_data)
     message_type = bin_data.read(1);
-    i +=1
 bin_data.close();
