@@ -78,6 +78,7 @@ def mwcb_status_message(msg):
 def ipo_quoting_period_update(msg):
     #MIPO Quoting period update format (total 8 variables)
     #including: message type("K"), stock locate, tracking number, timestamp,stock, IPO quotation release time,IPO quotation release qualifier, IPO price
+    val = struct.unpack('!HH6s8sIcL',msg);
     val = list(val);
     val[6] = float(val[6]);
     val[6] = val[6]/10000;
@@ -101,7 +102,6 @@ def LULD_Auction_Collar(msg):
 def Operational_Halt(msg):
     #operational halt format (total 7 variables)
     #including: message type("h"), stock locate, tracking number, timestamp, stock, market code, operational halt action
-    val = struct.unpack('!HH6s8sLLLI',msg);
     val = struct.unpack('!HH6s8scc',msg);
     val = list(val);
     #val[8] = float(val[8]);
@@ -114,6 +114,7 @@ def Operational_Halt(msg):
 def add_order_message(msg):
     #add order message format (total 9 variables)
     #including: message type("A"), stock locate, tracking number, timestamp, order reference number, buy/sell indicator, shares, stock, price
+    val = struct.unpack('!HH6sQcI8sL',msg);
     val = list(val);
     val[7] = float(val[7]);
     val[7] = val[7]/10000;
