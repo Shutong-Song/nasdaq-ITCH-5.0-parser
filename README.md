@@ -16,4 +16,4 @@ https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproduct
 
 
 # Note:
-the printed timestamp has been converted into binary char, to convert it to timestamp in nanosecond, use function "int.from_bytes(your_binray_char, byteorder="big", signed=False). For example, if the timestamp is "b'\r\x18\xe5\xb8.h'", int.from_bytes(b'\r\x18\xe5\xb8.h',byteorder='big',signed=False) will give 14400584429160 nanoseconds, you can convert to hour by 14400584429160/(1e9*60*60) which is about 4 AM. 
+1. the printed timestamp has been converted into binary char, to convert it to timestamp in nanosecond, use function "int.from_bytes(your_binray_char, byteorder="big", signed=False). For example, if the timestamp is "b'\r\x18\xe5\xb8.h'", int.from_bytes(b'\r\x18\xe5\xb8.h',byteorder='big',signed=False) will give 14400584429160 nanoseconds, you can convert to hour by 14400584429160/(1e9*60*60) which is about 4 AM. 
